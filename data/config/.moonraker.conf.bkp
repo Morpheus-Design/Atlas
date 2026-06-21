@@ -44,3 +44,18 @@ managed_services = klipper moonraker
 
 [timelapse]
 
+[update_manager octoeverywhere]
+type = git_repo
+channel = beta
+path = /home/sonic/octoeverywhere
+origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
+env = /home/sonic/octoeverywhere-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	octoeverywhere
+
+[announcements]
+subscriptions = 
+	octoeverywhere
+
