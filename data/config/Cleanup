@@ -1,0 +1,12 @@
+# general system cleanup
+sudo apt clean sudo apt autoclean
+sudo find /tmp -type f -mtime +3 -delete
+sudo journalctl --vacuum-size=100M
+
+# timelapse cleanup
+rm /home/sonic/printer_data/timelapse/cam1/*.jpg
+rm /home/sonic/printer_data/timelapse/cam2/*.jpg
+
+# finding large files
+sudo find /home/sonic -type f -size +100M -exec ls -lh {} \;
+df -h
